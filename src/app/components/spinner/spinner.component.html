@@ -1,0 +1,7 @@
+<div [style.color]="color" class="d-flex mt-5 mb-5 justify-content-center">
+  <div class="d-flex flex-column">
+    <h5 class="card-title" *ngIf="loadingText[activeTextIndex] != ''">{{loadingText[activeTextIndex]}}</h5>
+    <div class="spinner-border" role="status">
+    </div>
+  </div>
+</div>

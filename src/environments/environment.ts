@@ -6,6 +6,11 @@ export const environment = {
   production: false
 };
 
+export const urls = {
+  nasaBaseUrl: "https://api.nasa.gov",
+  planetaryApi: "/planetary/apod?api_key=zdUP8ElJv1cehFM0rsZVSQN7uBVxlDnu4diHlLSb&date=SAMPLE_DATE"
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
