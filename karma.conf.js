@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/nasa-front'),
+      dir: require('path').join(__dirname, './coverage/atmira-frontend'),
       subdir: '.',
       reporters: [
         { type: 'html' },
