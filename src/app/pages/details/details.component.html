@@ -13,7 +13,7 @@
         alt="{{apod!.title}}">
       <div *ngIf="apod!.media_type === 'video'" class="wrapper">
         <div class="h_iframe">
-          <img class="ratio" src="http://placehold.it/16x9" />
+          <img class="ratio" src="../../../assets/images/16x9.png" />
           <iframe [src]="apod!.url | safe" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
