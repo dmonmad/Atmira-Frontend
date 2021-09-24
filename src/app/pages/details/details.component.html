@@ -9,7 +9,7 @@
     </a>
     <div class="card border-0 my-4">
 
-      <img *ngIf="apod!.media_type === 'image'" class="card-img-top" style="max-height: 302.02px" src="{{apod!.url}}"
+      <img *ngIf="apod!.media_type === 'image'" class="card-img-top" src="{{apod!.url}}"
         alt="{{apod!.title}}">
       <div *ngIf="apod!.media_type === 'video'" class="wrapper">
         <div class="h_iframe">
