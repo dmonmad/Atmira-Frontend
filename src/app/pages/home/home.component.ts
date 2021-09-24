@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     transition: true,
     'max-glare': 0.25,
     'glare-prerender': false,
-    gyroscope: true,
+    gyroscope: false,
     gyroscopeMinAngleX: -30,
     gyroscopeMaxAngleX: 30,
     gyroscopeMinAngleY: -30,
