@@ -1,16 +1,15 @@
 <div class="background d-flex">
 
-  <div class="container d-flex justify-content-center align-items-center">
+  <div *ngIf="apod; else loading" class="container d-flex justify-content-center align-items-center">
 
-    <a class="backIcon" routerLink="/">
-      <fa-icon [icon]="backIcon" [fixedWidth]="true">
-
-      </fa-icon>
-    </a>
+    
     <div class="card border-0 my-4">
-
-      <img *ngIf="apod!.media_type === 'image'" class="card-img-top" src="{{apod!.url}}"
-        alt="{{apod!.title}}">
+      <a class="backIcon" routerLink="/">
+        <fa-icon [icon]="backIcon" [fixedWidth]="true">
+  
+        </fa-icon>
+      </a>
+      <img *ngIf="apod!.media_type === 'image'" class="card-img-top" src="{{apod!.url}}" alt="{{apod!.title}}">
       <div *ngIf="apod!.media_type === 'video'" class="wrapper">
         <div class="h_iframe">
           <img class="ratio" src="../../../assets/images/16x9.png" />
@@ -30,3 +29,10 @@
   </div>
 
 </div>
+
+<ng-template #loading>
+  <div class="container d-flex justify-content-center align-items-center">
+    <app-spinner [color]="'white'" [loadingText]="['Loading.','Loading..','Loading...']"></app-spinner>
+
+  </div>
+</ng-template>

@@ -15,10 +15,11 @@ const routes: Routes = [
   //   data: { animation: 'HomeComponent' },
   // },
   {
-    path: 'details',
+    path: 'details/:date',
     component: DetailsComponent,
     data: { animation: 'DetailsComponent' },
   },
+  { path: '**', pathMatch: 'full', redirectTo: '' },
 ]
 
 @NgModule({

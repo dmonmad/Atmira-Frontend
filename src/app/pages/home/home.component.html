@@ -1,22 +1,23 @@
-<div class="background">
+<div class="background d-flex flex-column">
 
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand mx-3" routerLink="/">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/110px-NASA_logo.svg.png" width="35" height="30" class="d-inline-block align-top"
-        alt="">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/110px-NASA_logo.svg.png"
+        width="35" height="30" class="d-inline-block align-top" alt="">
       Pic of the day
     </a>
   </nav>
-  <div class="container d-flex justify-content-center align-items-center mt-3">
+  <div *ngIf="!isLoading;else loading" class="container d-flex justify-content-center align-items-center mt-3">
 
-    <div class="row" *ngIf="!isLoading;else loading">
+    <div class="row">
 
       <div class="col-12 col-md-6 col-lg-4  mt-2 mb-2" *ngFor="let apod of apods">
 
-        <div class="card border-0 pointer tilt" aTilt [tiltSettings]="tiltSettings" (click)="openDetails(apod)" hover-class="selected">
+        <div class="card border-0 pointer tilt" aTilt [tiltSettings]="tiltSettings" (click)="openDetails(apod)"
+          hover-class="selected">
 
-          <img *ngIf="apod.media_type === 'image'" class="card-img-top" style="max-height: 302.02px"
-            src="{{apod.url}}" alt="{{apod.title}}">
+          <img *ngIf="apod.media_type === 'image'" class="card-img-top" style="max-height: 302.02px" src="{{apod.url}}"
+            alt="{{apod.title}}">
           <div *ngIf="apod.media_type === 'video'" class="wrapper">
             <div class="h_iframe">
               <img class="ratio" src="http://placehold.it/16x9" />
@@ -38,5 +39,8 @@
 </div>
 
 <ng-template #loading>
-  <app-spinner [color]="'white'" [loadingText]="['Loading.','Loading..','Loading...']"></app-spinner>
+  <div class="container d-flex justify-content-center align-items-center">
+    <app-spinner [color]="'white'" [loadingText]="['Loading.','Loading..','Loading...']"></app-spinner>
+
+  </div>
 </ng-template>

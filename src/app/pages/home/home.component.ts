@@ -70,6 +70,6 @@ export class HomeComponent implements OnInit {
   }
 
   openDetails(item: Apod) {
-    this.router.navigate(['details'], { state: { item: item } })
+    this.router.navigate(['details', item.date], { state: { item: item } })
   }
 }
